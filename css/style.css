@@ -1,0 +1,186 @@
+/* style.css */
+
+/* Общие настройки */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    background: linear-gradient(135deg, #000, #555, #fff);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+/* Анимация для плавного переливания градиента */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #aaa;
+}
+
+/* Hero секция */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Превью секции */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+section p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+section a {
+    color: #ccc;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+section a:hover {
+    color: #fff;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #aaa;
+    font-size: 14px;
+}
+
+footer nav {
+    margin-top: 10px;
+}
+
+footer a {
+    margin: 0 10px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Планшеты */
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* Смартфоны */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 8px 0;
+        font-size: 18px;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px 22px;
+        font-size: 14px;
+    }
+}
