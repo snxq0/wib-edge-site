@@ -1,0 +1,137 @@
+/* ====== Общие настройки страницы ====== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f0f0f0; /* простой фон */
+  color: #333;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  background: #222; /* тёмная шапка */
+}
+
+header h1 {
+  margin: 0;
+  color: #fff;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* ====== Слайдер ====== */
+#projects {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.slider {
+  position: relative;
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 80%;
+  max-width: 500px;
+  background: #fff; /* обычная карточка */
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.slide img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+}
+
+.slide p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.slide a {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.slide a:hover {
+  background: #444;
+}
+
+/* ====== Стрелки ====== */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: #444;
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+/* ====== Футер ====== */
+footer {
+  background: #222;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+  color: #fff;
+}
