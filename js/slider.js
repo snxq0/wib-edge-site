@@ -7,36 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
-            }
+            slide.classList.toggle('active', i === index);
         });
     }
 
     prevBtn.addEventListener('click', () => {
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = slides.length - 1;
-        }
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         showSlide(currentIndex);
     });
 
     nextBtn.addEventListener('click', () => {
-        currentIndex++;
-        if (currentIndex >= slides.length) {
-            currentIndex = 0;
-        }
+        currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
     });
 
-    // Автопрокрутка (опционально)
-    setInterval(() => {
-        currentIndex++;
-        if (currentIndex >= slides.length) currentIndex = 0;
-        showSlide(currentIndex);
-    }, 5000); // каждые 5 секунд
-
-    // Инициализация
+    // Показать первый слайд при загрузке
     showSlide(currentIndex);
 });
