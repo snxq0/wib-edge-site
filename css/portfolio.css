@@ -1,137 +1,158 @@
-/* ====== Общие настройки страницы ====== */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f0f0f0; /* простой фон */
-  color: #333;
+/* ===== Основной Layout ===== */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-header {
-  padding: 20px;
-  text-align: center;
-  background: #222; /* тёмная шапка */
+/* Контент тянется, футер снизу */
+main {
+    flex: 1;
 }
 
-header h1 {
-  margin: 0;
-  color: #fff;
-}
-
-nav a {
-  margin: 0 15px;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #ffd700;
-}
-
-/* ====== Слайдер ====== */
+/* ===== Секция слайдера ===== */
 #projects {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
 }
 
+/* Слайдер */
 .slider {
-  position: relative;
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    min-height: 320px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
 
+/* Обёртка */
 .slider-wrapper {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
+/* Слайды */
 .slide {
-  flex: 0 0 80%;
-  max-width: 500px;
-  background: #fff; /* обычная карточка */
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: none;
+    position: absolute;
+    inset: 0;
+    padding: 60px 40px;
+    text-align: center;
+    color: #fff;
+    animation: fadeScale 0.6s ease;
 }
 
-.slide:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+.slide.active {
+    display: block;
 }
 
-.slide img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 15px;
+/* Заголовки */
+.slide h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(255,255,255,0.5);
 }
 
+/* Текст */
 .slide p {
-  color: #555;
-  font-size: 1rem;
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #ddd;
 }
 
+/* Кнопки-ссылки */
 .slide a {
-  display: inline-block;
-  background: #222;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: background 0.3s;
+    display: inline-block;
+    padding: 10px 22px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .slide a:hover {
-  background: #444;
+    background: #fff;
+    color: #000;
 }
 
-/* ====== Стрелки ====== */
+/* ===== Кнопки управления ===== */
 .slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #222;
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s;
-  z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: none;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+    z-index: 10;
 }
 
 .slider-btn:hover {
-  background: #444;
+    background: rgba(255,255,255,0.4);
+    color: #000;
 }
 
 .slider-btn.prev {
-  left: 10px;
+    left: 15px;
 }
 
 .slider-btn.next {
-  right: 10px;
+    right: 15px;
 }
 
-/* ====== Футер ====== */
+/* Анимация появления */
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== Футер ===== */
 footer {
-  background: #222;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: auto;
-  color: #fff;
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 768px) {
+    .slide {
+        padding: 40px 20px;
+    }
+
+    .slide h3 {
+        font-size: 22px;
+    }
+
+    .slide p {
+        font-size: 14px;
+    }
+
+    .slider-btn {
+        font-size: 26px;
+        padding: 8px 14px;
+    }
 }
