@@ -50,7 +50,7 @@
 
 .services {
     display: inline-block;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 12px 30px;
     border-radius: 8px;
     text-decoration: none;
@@ -61,10 +61,6 @@
 }
 
 .services:hover {
-    background: #0056b3;
     transform: translateY(-3px);
 }
 
-section.packages {
-    text-align: center; /* выравнивает кнопку по центру */
-}
