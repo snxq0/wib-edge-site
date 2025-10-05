@@ -47,3 +47,11 @@
     font-size: 15px;
     color: #ddd;
 }
+
+.services{
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
