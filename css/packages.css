@@ -48,10 +48,24 @@
     color: #ddd;
 }
 
-.services{
-    margin-left: 500px;
+.services {
+    display: inline-block;
+    margin: 40px auto;
+    padding: 12px 30px;
+    background: #007bff; /* можно поменять цвет под стиль сайта */
+    border-radius: 8px;
     text-decoration: none;
     font-size: 16px;
-    color: #f0f0f0;
-    transition: color 0.3s ease;
+    color: #fff;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.services:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+}
+
+section.packages {
+    text-align: center; /* выравнивает кнопку по центру */
 }
